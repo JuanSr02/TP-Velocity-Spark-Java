@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de Unidades</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Conversor de Unidades</h1>
+      <form method="get">
+        <div class="form-group">
+          <label for="valor">Ingrese un valor:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="valor"
+            name="valor"
+            step="any"
+            placeholder="Ingrese un número"
+          />
+        </div>
+        <input type="hidden" id="unidadOrigen" name="unidadOrigen" value="" />
+        <input type="hidden" id="unidadDestino" name="unidadDestino" value="" />
+        <button
+          type="submit"
+          class="btn btn-primary"
+          formaction="/convertirPeso"
+          onclick="setUnidades('kgs', 'lbs')"
+        >
+          Kgs a lbs
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          formaction="/convertirPeso"
+          onclick="setUnidades('lbs', 'kgs')"
+        >
+          Lbs a kgs
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          formaction="/convertirTemperatura"
+          onclick="setUnidades('C°', 'F°')"
+        >
+          C° a F°
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          formaction="/convertirTemperatura"
+          onclick="setUnidades('F°', 'C°')"
+        >
+          F° a C°
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          formaction="/convertirLongitud"
+          onclick="setUnidades('m', 'cm')"
+        >
+          m a cm
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          formaction="/convertirLongitud"
+          onclick="setUnidades('cm', 'm')"
+        >
+          cm a m
+        </button>
+      </form>
+      <div class="mt-3" id="resultado">
+        <b
+          ><p>
+            $valor ingresado en $unidadO es igual a $resultado en $unidadN
+          </p></b
+        >
+      </div>
+    </div>
+    <script>
+      function setUnidades(origen, destino) {
+        // Setear los valores de unidadOrigen y unidadDestino en el formulario
+        document.getElementById("unidadOrigen").value = origen;
+        document.getElementById("unidadDestino").value = destino;
+      }
+    </script>
+  </body>
+</html>
+

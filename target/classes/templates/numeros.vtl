@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar y Desordenar Números</title>
+    <style>
+        /* Estilos opcionales para mejorar la apariencia */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        label {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 100px;
+            padding: 1px;
+            margin-bottom: 1px;
+        }
+        button {
+            margin-top: 15px;
+            display:flexbox;
+            padding: 5px 5px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        #numeros-container {
+            position:absolute;
+            top:15%;
+            right:50%;
+        }
+    </style>
+</head>
+<body>
+<form action ="/ordenar" method="get">
+    <h1>Ordenar y Desordenar Números</h1>
+        <label for="numero0">Numero 0:</label>
+        <input type="number" id="numero" name="numero">
+        <label for="numero1">Numero 1:</label>
+        <input type="number" id="numero" name="numero">
+        <label for="numero2">Numero 2:</label>
+        <input type="number" id="numero" name="numero">
+        <label for="numero3">Numero 3:</label>
+        <input type="number" id="numero" name="numero">
+        <label for="numero4">Numero 4:</label>
+        <input type="number" id="numero" name="numero">
+        <label for="numero5">Numero 5:</label>
+        <input type="number" id="numero" name="numero">
+        <br>
+        <button type="submit">Ordenar</button>
+        <button type="submit" formaction="/desordenar" method="get">Desordenar</button>
+</form>
+    <div id="numeros-container">
+        <p>Cantidad de numeros: <span id="cantidad-numeros">$numeros.size()</span></p>
+        <p>Lista de numeros: <span id="lista-numeros">
+<ul>
+#foreach($numero in $numeros)
+        <li>$numero</li>
+    #end
+</ul>
+</span></p>
+    </div>

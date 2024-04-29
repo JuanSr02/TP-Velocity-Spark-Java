@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantalla de Personas</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      padding-top: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .person-list {
+      margin-top: 30px;
+    }
+    .person-info {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+ <form method="get">
+  <div class="container">
+    <div class="header">
+      <div class="mb-3">
+        <label for="inputName" class="form-label">Un nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre">
+      </div>
+    </div>
+    <div class="person-buttons">
+        <button type="submit" class="btn btn-primary" formaction="/getHijos">Hijos</button>
+        <button type="submit" class="btn btn-primary" formaction="/getHermanos">Hermanos</button>
+        <button type="submit" class="btn btn-primary" formaction="/getNietos">Nietos</button>
+        <button type="submit" class="btn btn-primary" formaction="/getPadres">Padres</button>
+        <button type="submit" class="btn btn-primary" formaction="/getSobrinos">Sobrinos</button>
+        <button type="submit" class="btn btn-primary" formaction="/getTios">Tíos</button>
+        <button type="submit" class="btn btn-primary" formaction="/getPersonas">Todas las personas</button>
+      </form>
+    </div>
+    <div class="person-info">
+      <p>Cantidad: <span id="resultSize">$personas.size()</span></p>
+      <br>
+      <p>Ellos son:#set( $cuenta = 1 )</p>
+      <TABLE>
+         #foreach( $p in $personas )          
+            <TR>
+                <TD>$cuenta).         </TD>
+                <TD>$p.getNombre() $p.getApellido() </TD>
+            </TR>
+          #set( $cuenta = $cuenta + 1 )
+        #end
+      </TABLE>      <BR/>
+    </div>
+  </div>
+</body>
+</html>

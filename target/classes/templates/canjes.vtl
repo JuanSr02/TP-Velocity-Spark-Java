@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Canjes</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Detalle de Canjes</h1>
+    <div class="row">
+      <div class="col">
+        <ul class="list-group">
+          #foreach($canje in $canjes)
+            <li class="list-group-item">Nombre: $canje.getNombre() - Puntos requeridos: $canje.getPuntosRequeridos()</li>
+          #end
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col">
+        <form method="get" action="/canjesDisponibles">
+          <div class="form-group">
+            <label for="puntos">Ingrese sus puntos:</label>
+            <input type="number" class="form-control" id="puntos" name="puntos" placeholder="Ingrese sus puntos">
+          </div>
+          <button type="submit" class="btn btn-primary">Ver Canjes Disponibles</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
